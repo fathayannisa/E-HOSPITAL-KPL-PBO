@@ -10,5 +10,9 @@ package MODEL;
  * @author User
  */
 public class User_Model {
+    private String nama;
+    private String email;
+    private String password;
+    private String status;
     
 }
