@@ -5,19 +5,48 @@
  */
 package VIEW;
 
+import CONTROL.Registrasi_Control;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author User
  */
 public class Register_GUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Register_GUI
-     */
+    public static Registrasi_Control control;
     public Register_GUI() {
         initComponents();
+        control = new Registrasi_Control(this);
+    }
+    
+    public String getEmailTxtField() {
+        return emailTxtField.getText();
     }
 
+    public String getJeniskelaminTxtField() {
+
+        if(jeniskelaminTxtField.getSelectedItem().toString().intern()== "Laki laki"){
+            return "Laki laki";
+        }else{
+            return "Perempuan";
+        }
+        
+    }
+
+    public String getNamaTxtField() {
+        return namaTxtField.getText();
+    }
+
+    public String getNohpTxtField() {
+        return nohpTxtField.getText();
+    }
+
+    public String getPassTxtField() {
+        return passTxtField.getText();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,6 +82,11 @@ public class Register_GUI extends javax.swing.JFrame {
         jLabel4.setText("Password");
 
         daftarButton.setText("DAFTAR");
+        daftarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                daftarButtonActionPerformed(evt);
+            }
+        });
 
         namaTxtField.setText(" ");
 
@@ -168,6 +202,20 @@ public class Register_GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jeniskelaminTxtFieldActionPerformed
 
+    private void daftarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+            control.isiData(getNamaTxtField(), getEmailTxtField(), getPassTxtField(), getJeniskelaminTxtField(), getNohpTxtField(),this);
+            Login_GUI login = new Login_GUI();
+            login.show();
+            dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Tipe data yang dimasukan Salah !",
+                    "warning",JOptionPane.WARNING_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_daftarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -202,6 +250,8 @@ public class Register_GUI extends javax.swing.JFrame {
             }
         });
     }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton daftarButton;
