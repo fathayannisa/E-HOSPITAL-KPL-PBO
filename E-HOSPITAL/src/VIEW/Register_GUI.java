@@ -32,10 +32,14 @@ public class Register_GUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        daftarButton = new javax.swing.JButton();
+        namaTxtField = new javax.swing.JTextField();
+        emailTxtField = new javax.swing.JTextField();
+        passTxtField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        nohpTxtField = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jeniskelaminTxtField = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,18 +52,31 @@ public class Register_GUI extends javax.swing.JFrame {
 
         jLabel4.setText("Password");
 
-        jButton1.setText("DAFTAR");
+        daftarButton.setText("DAFTAR");
 
-        jTextField1.setText(" ");
+        namaTxtField.setText(" ");
 
-        jTextField2.setText(" ");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        emailTxtField.setText(" ");
+        emailTxtField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                emailTxtFieldActionPerformed(evt);
             }
         });
 
-        jTextField3.setText(" ");
+        passTxtField.setText(" ");
+
+        jLabel5.setText("Jenis Kelamin");
+
+        nohpTxtField.setText(" ");
+
+        jLabel6.setText("Nomor HP");
+
+        jeniskelaminTxtField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki laki", "Perempuan" }));
+        jeniskelaminTxtField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jeniskelaminTxtFieldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,16 +93,20 @@ public class Register_GUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
                         .addGap(53, 53, 53)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(emailTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(namaTxtField)
+                            .addComponent(passTxtField)
+                            .addComponent(jeniskelaminTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nohpTxtField)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jButton1)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(168, 168, 168)
+                        .addComponent(daftarButton)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,24 +116,33 @@ public class Register_GUI extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(namaTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(emailTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jButton1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(passTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jeniskelaminTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(nohpTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(daftarButton)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        jButton1.getAccessibleContext().setAccessibleName("daftarButton");
-        jTextField1.getAccessibleContext().setAccessibleName("namaLengkapTxtField");
-        jTextField2.getAccessibleContext().setAccessibleName("emailDaftarTxtField");
-        jTextField3.getAccessibleContext().setAccessibleName("passTxtField");
+        daftarButton.getAccessibleContext().setAccessibleName("daftarButton");
+        namaTxtField.getAccessibleContext().setAccessibleName("namaLengkapTxtField");
+        emailTxtField.getAccessibleContext().setAccessibleName("emailDaftarTxtField");
+        passTxtField.getAccessibleContext().setAccessibleName("passTxtField");
+        nohpTxtField.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,15 +152,21 @@ public class Register_GUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void emailTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTxtFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_emailTxtFieldActionPerformed
+
+    private void jeniskelaminTxtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jeniskelaminTxtFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jeniskelaminTxtFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,14 +204,18 @@ public class Register_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton daftarButton;
+    private javax.swing.JTextField emailTxtField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JComboBox<String> jeniskelaminTxtField;
+    private javax.swing.JTextField namaTxtField;
+    private javax.swing.JTextField nohpTxtField;
+    private javax.swing.JTextField passTxtField;
     // End of variables declaration//GEN-END:variables
 }
