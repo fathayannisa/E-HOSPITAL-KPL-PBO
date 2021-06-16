@@ -15,13 +15,23 @@ public class User_Model {
     private String password;
     private String jenisKelamin;
     private String noHp;
+    private String idPasien;
     
-    public User_Model(String nama, String email, String password, String jenisKelamin, String noHp) {
+    public User_Model(String idPasien, String nama, String email, String password, String jenisKelamin, String noHp) {
+        this.idPasien = idPasien;
         this.nama = nama;
         this.email = email;
         this.password = password;
         this.jenisKelamin = jenisKelamin;
         this.noHp = noHp;
+    }
+
+    public String getIdPasien() {
+        return idPasien;
+    }
+
+    public void setIdPasien(String idPasien) {
+        this.idPasien = idPasien;
     }
 
     public String getNama() {
