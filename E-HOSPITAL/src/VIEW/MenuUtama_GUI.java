@@ -34,9 +34,12 @@ public class MenuUtama_GUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 204, 255));
 
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setText("Pesan Dokter");
 
+        jButton3.setBackground(new java.awt.Color(153, 204, 255));
         jButton3.setText("Jadwal Dokter");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,12 +75,12 @@ public class MenuUtama_GUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addComponent(jLabel3)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel1)
                 .addGap(2, 2, 2)
                 .addComponent(jLabel2)
