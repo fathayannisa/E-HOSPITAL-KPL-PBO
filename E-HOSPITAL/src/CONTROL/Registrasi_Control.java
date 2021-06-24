@@ -1,6 +1,6 @@
 package CONTROL;
 
-import Database.KoneksiDatabase;
+import Database.KoneksiDatabaseUser;
 import MODEL.User_Model;
 import VIEW.Register_GUI;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Registrasi_Control {
     
     
     public Registrasi_Control (Register_GUI regis){
-        user = KoneksiDatabase.GetData();
+        user = KoneksiDatabaseUser.GetData();
         this.regis = regis;
     }
     
@@ -24,7 +24,7 @@ public class Registrasi_Control {
         }else if(regis.getNamaTxtField().isEmpty()|| regis.getEmailTxtField().isEmpty()||regis.getPassTxtField().isEmpty()||regis.getNohpTxtField().isEmpty()){
             JOptionPane.showMessageDialog(null, "Ada field yang belum terisi", "Warning",JOptionPane.WARNING_MESSAGE);
         }else {
-            KoneksiDatabase.InsertDataPasien(regis.getIdPasien1(), regis.getNamaTxtField(),regis.getEmailTxtField(),regis.getPassTxtField(),regis.getJeniskelaminTxtField(),
+            KoneksiDatabaseUser.InsertDataPasien(regis.getIdPasien1(), regis.getNamaTxtField(),regis.getEmailTxtField(),regis.getPassTxtField(),regis.getJeniskelaminTxtField(),
                         regis.getNohpTxtField());
             
                 JOptionPane.showMessageDialog(null, "sukses memasukan " + nama,

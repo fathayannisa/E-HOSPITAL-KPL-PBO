@@ -122,7 +122,7 @@ public class Register_GUI extends javax.swing.JFrame {
             }
         });
 
-        idPasien.setText("Id_Pasien");
+        idPasien.setText("NO. KTP");
 
         idPasien1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package CONTROL;
-import Database.KoneksiDatabase;
+import Database.KoneksiDatabaseUser;
 import MODEL.User_Model;
 import VIEW.Login_GUI;
 import VIEW.MenuUtama_GUI;
@@ -21,7 +21,7 @@ public class Login_Control {
     public List <User_Model> user;
     
     public Login_Control(Login_GUI loginForm){
-        user = KoneksiDatabase.GetData();
+        user = KoneksiDatabaseUser.GetData();
         this.login = loginForm;
     }
     

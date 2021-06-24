@@ -5,7 +5,8 @@
  */
 package MODEL;
 
-import Database.KoneksiDatabase;
+import Database.KoneksiDatabaseDokter;
+import Database.KoneksiDatabaseUser;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,14 +18,14 @@ public class MAIN {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        List<User_Model> myObj = new ArrayList<User_Model>();
+        List<Dokter_Model> myObj = new ArrayList<Dokter_Model>();
         
-        myObj =  KoneksiDatabase.GetData();
+        myObj =  KoneksiDatabaseDokter.GetData();
         
-        for(User_Model Item : myObj){
-            System.out.println("Id Pasien       : " + Item.getIdPasien());
-            System.out.println("Nama Pasien     : " + Item.getNama());
-            System.out.println("Jenis Kelmain   : " + Item.getJenisKelamin());
+        for(Dokter_Model Item : myObj){
+            System.out.println("Id Dokter       : " + Item.getIdDokter());
+            System.out.println("Nama Dokter     : " + Item.getNamaDokter());
+            System.out.println("Spesialis       : " + Item.getSpesialis());
         }
         
     }
