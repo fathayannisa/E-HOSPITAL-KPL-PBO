@@ -28,6 +28,8 @@ public class PesanDokter_Control {
     
     public void getDataDokter(PesanDokter_GUI dataDokter) {
         try{
+           dataDokter.modelTable.getDataVector().removeAllElements();
+           dataDokter.modelTable.fireTableDataChanged();
            Object[] obj = new Object[5];
            for (int i = 0 ; i < dokter.size();i++){
                    obj[0] = dokter.get(i).getIdDokter();
@@ -37,6 +39,27 @@ public class PesanDokter_Control {
                    obj[4] = dokter.get(i).getKeterangan();
                    dataDokter.modelTable.addRow(obj); //memasukkan dta data ke tabel gui
            }
+        }catch(Exception e){
+            System.out.println("Data Kosong dan belum masuk");
+            JOptionPane.showMessageDialog(null, "Data Kosong",
+                "warning",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    public void CariKeterangan(String keterangan, PesanDokter_GUI dataDokter){
+        try{
+            dataDokter.modelTable.getDataVector().removeAllElements();
+            dataDokter.modelTable.fireTableDataChanged();
+            Object[] obj = new Object[5];
+            for (int i = 0 ; i < dokter.size();i++){
+                if (keterangan.intern()==dokter.get(i).getKeterangan().intern()){
+                       obj[0] = dokter.get(i).getIdDokter();
+                       obj[1] = dokter.get(i).getNamaDokter();
+                       obj[2] = dokter.get(i).getSpesialis();
+                       obj[3] = dokter.get(i).getJamPraktek();
+                       obj[4] = dokter.get(i).getKeterangan();
+                       dataDokter.modelTable.addRow(obj);
+                }
+            }
         }catch(Exception e){
             System.out.println("Data Kosong dan belum masuk");
             JOptionPane.showMessageDialog(null, "Data Kosong",
